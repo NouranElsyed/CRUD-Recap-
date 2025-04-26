@@ -67,19 +67,21 @@ function DisplayProducts(arr,searchValue=""){
       
       arr.map((product,index) => {
         cardsContainer += `
-         <div class="col">
-            <div class="productCard shadow-lg py-3 px-5 rounded d-flex flex-column align-items-center justify-content-center">
+         <div class="col ">
+            <div class="productCard h-100 shadow-lg py-3 px-5 rounded d-flex flex-column justify-content-lg-between">
               <img src=${product.image} alt="" class="w-100 rounded m-1">
-              <h2 class="fs-5">${product.name.replace(new RegExp(searchValue, "gi"), match => `<span>${match}</span>`)}</h2>
-              <p>${product.description}</p>
-              <div class="categoryPrice d-flex flex justify-content-between w-100">
-                <p>${product.category.replace(new RegExp(searchValue, "gi"), match => `<span>${match}</span>`)}</p>
-                <span>$${product.price}</span>
-              </div>
-              <div class="w-100 d-flex flex-column gap-2 align-items-center justify-content-center">
-                <button onclick="Update(${index})" class="w-100 btn btn-outline-warning">Update</button>
-                <button onclick="DeleteProduct(${index})" class="w-100 btn btn-outline-danger">Delete</button>
-              </div>  
+              <div class="w-100 d-flex flex-column align-items-center justify-content-center">
+                <h2 class="fs-5">${product.name.replace(new RegExp(searchValue, "gi"), match => `<span>${match}</span>`)}</h2>
+                <p>${product.description}</p>
+                <div class="categoryPrice d-flex flex justify-content-between w-100 ">
+                  <p>${product.category.replace(new RegExp(searchValue, "gi"), match => `<span>${match}</span>`)}</p>
+                  <span>$${product.price}</span>
+                </div>
+                <div class="w-100 d-flex flex-column gap-2 align-items-center justify-content-center">
+                  <button onclick="Update(${index})" class="w-100 btn btn-outline-warning">Update</button>
+                  <button onclick="DeleteProduct(${index})" class="w-100 btn btn-outline-danger">Delete</button>
+                </div> 
+              </div> 
             </div>
           </div>
         `
