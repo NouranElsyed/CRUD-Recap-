@@ -70,7 +70,7 @@ function DisplayProducts(arr,searchValue=""){
          <div class="col">
             <div class="productCard shadow-lg py-3 px-5 rounded d-flex flex-column align-items-center justify-content-center">
               <img src=${product.image} alt="" class="w-100 rounded m-1">
-              <h2 class="fs-5">  ${product.name.replace(new RegExp(searchValue, "gi"), match => `<span>${match}</span>`)}</h2>
+              <h2 class="fs-5">${product.name.replace(new RegExp(searchValue, "gi"), match => `<span>${match}</span>`)}</h2>
               <p>${product.description}</p>
               <div class="categoryPrice d-flex flex justify-content-between w-100">
                 <p>${product.category.replace(new RegExp(searchValue, "gi"), match => `<span>${match}</span>`)}</p>
