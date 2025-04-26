@@ -1,4 +1,4 @@
-h2 span {
+h2 span, p span {
     background-color: yellow;
     font-weight: bold;
 }

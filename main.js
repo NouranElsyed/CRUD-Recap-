@@ -151,8 +151,7 @@ function UpdateProduct(){
     currentIndex = null
     document.getElementById("UpdateProductBtn").classList.add("d-none")
     document.getElementById("AddProductBtn").classList.remove("d-none")
-    imgContainer.classList.add("d-none")
-    imgContainer.innerHTML = "";
+    RemoveThePreview()
     }
 //^===========|> Search function
     function Search(value){
