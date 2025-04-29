@@ -69,10 +69,10 @@ function DisplayProducts(arr,searchValue=""){
         cardsContainer += `
          <div class="col ">
             <div class="productCard h-100 shadow-lg py-3 px-5 rounded d-flex flex-column justify-content-lg-between">
-              <img src=${product.image} alt="" class="w-100 rounded m-1">
-              <div class="w-100 d-flex flex-column align-items-center justify-content-center">
-                <h2 class="fs-5">${product.name.replace(new RegExp(searchValue, "gi"), match => `<span>${match}</span>`)}</h2>
-                <p>${product.description}</p>
+              <div class=""><img src=${product.image} alt="" class="w-100 rounded m-1"></div>
+              <div class="w-100  d-flex flex-column align-items-center justify-content-center">
+                <h2 class="fs-5">${smartTrim(product.name, 10)?.replace(new RegExp(searchValue, "gi"), match => `<span>${match}</span>`)}</h2>
+                <p>${smartTrim(product.description,15)}</p>
                 <div class="categoryPrice d-flex flex justify-content-between w-100 ">
                   <p>${product.category.replace(new RegExp(searchValue, "gi"), match => `<span>${match}</span>`)}</p>
                   <span>$${product.price}</span>
@@ -161,9 +161,59 @@ function UpdateProduct(){
         product.category.toLowerCase().includes(value.toLowerCase())
     ||
         product.name.toLowerCase().includes(value.toLowerCase())  )
-      
-    
+
       console.log(result);
       DisplayProducts(result, value);
-
     }
+//^===========|>function for trim the text
+function smartTrim(text, maxLength = 50) {
+if(text.length <= maxLength){
+  return text
+}
+let prevText =""
+let textArr = text.split(" ")
+let trimmedText = ""
+for(let i =0; i<textArr.length ;i++){
+  prevText  =  trimmedText 
+  trimmedText += " " + textArr[i] 
+  console.log(trimmedText.length,trimmedText.trim())
+  if(trimmedText.length > maxLength){
+    trimmedText = prevText.trim() + "...";
+    break;
+  } else if(trimmedText.length === maxLength){
+    trimmedText = trimmedText.trim() + "...";
+    break;
+  }
+}
+return trimmedText;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
