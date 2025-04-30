@@ -191,52 +191,28 @@ function validateName(){
   let regexName = /^[a-zA-Z][a-zA-Z0-9]{2,}$/
   if(!regexName.test(productName.value)){
     document.getElementById("nameErrorMessage").classList.remove("d-none")
+    document.getElementById("productName").classList.add("ValidationError")
   }else{
     document.getElementById("nameErrorMessage").classList.add("d-none")
+    document.getElementById("productName").classList.remove("ValidationError")
   }
 }
 function validateDescription(){
   let regexName = /^[a-zA-Z][a-zA-Z0-9]{2,}$/
   if(!regexName.test(productDesc.value)){
     document.getElementById("descriptionErrorMessage").classList.remove("d-none")
+    document.getElementById("productDescription").classList.add("ValidationError")
   }else{
     document.getElementById("descriptionErrorMessage").classList.add("d-none")
+    document.getElementById("productDescription").classList.remove("ValidationError")
   }
 }
 function validateCategory(){
   if(productCategory.value=== ""){
     document.getElementById("categoryErrorMessage").classList.remove("d-none")
+    document.getElementById("productCategories").classList.add("ValidationError")
   }else{
     document.getElementById("categoryErrorMessage").classList.add("d-none")
+    document.getElementById("productCategories").classList.remove("ValidationError")
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

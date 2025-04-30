@@ -14,8 +14,8 @@
         <h1 class="text-center mb-3">CRUDs system</h1>
 
         <div class="form-floating mb-3">
-            <input oninput="validateName()" type="text" class="form-control" id="productName" placeholder="">
-            <label for="productName">product Name</label>
+            <input oninput="validateName()" type="text" class="form-control  " id="productName" placeholder="">
+            <label for="productName" class="" >product Name</label>
             <span id="nameErrorMessage" class="text-danger ps-3 d-none">the name must be at least 3 characters and cant begin with a number or special character</span>
           </div>
 
@@ -28,14 +28,14 @@
           
         <div class="form-floating mb-3">
             <textarea oninput="validateDescription()" class="form-control" id="productDescription" placeholder=""></textarea>
-            <label for="productDescription">product Description</label>
+            <label for="productDescription" class="">product Description</label>
             <span id="descriptionErrorMessage" class="text-danger ps-3 d-none">the description must be at least 3 characters and cant begin with a number or special character</span>
           </div>
 
           <div class="form-floating mb-3">
 
-        <input onblur="validateCategory()" class="form-control" list="Categories" id="productCategories" placeholder="">
-          <label for="productCategories" class="form-label">product Categories</label>
+        <input onblur="validateCategory()" class="form-control " list="Categories" id="productCategories" placeholder="">
+          <label for="productCategories" class="form-label ">product Categories</label>
           <datalist id="Categories">
             <option value="Clothes"/>
             <option value="Foods"/>

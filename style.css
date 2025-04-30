@@ -5,3 +5,6 @@ h2 span, p span {
 #imgContainer img{
     width: 100px;
 }
+.ValidationError {
+   border: 3px solid #d4020281;
+}
