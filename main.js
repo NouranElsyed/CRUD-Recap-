@@ -1,5 +1,4 @@
 // id // name // price // image // desc //category
-
 //^===========|> Global Variables
 const productName = document.getElementById("productName");
 const productImage = document.getElementById("productImage");
@@ -11,13 +10,13 @@ const imgContainer = document.getElementById("imgContainer");
 let products = []
 let currentIndex = null;
 let product = {}
-    // {
-    //     id: 1,
-    //     name: "Product 1",
-    //     image: "image1.jpg",
-    //     desc: "Description for product 1",
-    //     category: "Category A",
-    // }
+    //  {
+    //      id: 1,
+    //      name: "Product 1",
+    //      image: "image1.jpg",
+    //      desc: "Description for product 1",
+    //      category: "Category A",
+    //  }
 //^===========|> Load Products from Local Storage
 products = JSON.parse(localStorage.getItem("products")) || []
 DisplayProducts(products)
@@ -186,6 +185,30 @@ for(let i =0; i<textArr.length ;i++){
   }
 }
 return trimmedText;
+}
+//^===========|>validation functions
+function validateName(){
+  let regexName = /^[a-zA-Z][a-zA-Z0-9]{2,}$/
+  if(!regexName.test(productName.value)){
+    document.getElementById("nameErrorMessage").classList.remove("d-none")
+  }else{
+    document.getElementById("nameErrorMessage").classList.add("d-none")
+  }
+}
+function validateDescription(){
+  let regexName = /^[a-zA-Z][a-zA-Z0-9]{2,}$/
+  if(!regexName.test(productDesc.value)){
+    document.getElementById("descriptionErrorMessage").classList.remove("d-none")
+  }else{
+    document.getElementById("descriptionErrorMessage").classList.add("d-none")
+  }
+}
+function validateCategory(){
+  if(productCategory.value=== ""){
+    document.getElementById("categoryErrorMessage").classList.remove("d-none")
+  }else{
+    document.getElementById("categoryErrorMessage").classList.add("d-none")
+  }
 }
 
 
